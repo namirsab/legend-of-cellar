@@ -1,0 +1,50 @@
+properties{
+  x = 0,
+  y = 0,
+  width = 240,
+  height = 240,
+  min_layer = 0,
+  max_layer = 2,
+  tileset = "castle",
+  music = "cave",
+}
+
+tile{
+  layer = 0,
+  x = 0,
+  y = 0,
+  width = 240,
+  height = 240,
+  pattern = "3",
+}
+
+destination{
+  layer = 0,
+  x = 184,
+  y = 197,
+  direction = 3,
+}
+
+pickable{
+  layer = 0,
+  x = 168,
+  y = 189,
+  treasure_name = "bass_gem",
+}
+
+enemy{
+  layer = 0,
+  x = 48,
+  y = 69,
+  direction = 0,
+  breed = "beamer_bass",
+}
+
+enemy{
+  layer = 0,
+  x = 152,
+  y = 37,
+  direction = 0,
+  breed = "beamer_bass",
+}
+
