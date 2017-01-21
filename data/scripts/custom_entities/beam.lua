@@ -6,13 +6,13 @@ function Beam.initialize(entity, props)
   local hero = map:get_hero()
   local sprite
   local movement
-  
+    
   -- Event called when the enemy is initialized.
   function entity:on_created()
     -- Initialize the properties of your enemy here,
     -- like the sprite, the life and the damage.
-    sprite = entity:create_sprite("entities/" .. entity:get_model() .. "_mid")
-    entity:set_layer_independent_collisions(false)
+    sprite = entity:create_sprite("entities/" .. entity:get_model())
+    entity:set_layer_independent_collisions(true)
     entity:set_traversable_by(true)
     entity:set_can_traverse("camera", true)
     entity:set_can_traverse("crystal_block", true)
@@ -31,9 +31,18 @@ function Beam.initialize(entity, props)
 
 
     entity:add_collision_test("overlapping", function (entity, other)
-      if (other:get_type() == "enemy") then
-        print("Collision happened")
-        other:remove_life(1)
+      local other_type = other:get_type()
+      if (other_type == "enemy") then
+        local enemy_breed = other:get_breed()
+        if (enemy_breed == entity:get_model()) then
+          other:hurt(1)
+        elseif (enemy_breed == "beamer_" .. props.type) then
+          other:hurt(1)
+          entity:remove()
+        else
+          entity:remove()
+        end
+        
       end
       
     end)
@@ -52,11 +61,16 @@ function Beam.initialize(entity, props)
       -- The angle of the movement has changed: update the sprite accordingly.
       local direction = movement:get_direction4()
       entity:get_sprite():set_direction(direction)
-    end   
+    end
+
 
     function movement:on_finished()
       entity:remove()
     end
+
+    sol.timer.start(entity, 1000, function()
+      entity:remove()
+    end)
     
     movement:start(entity)
   end

@@ -12,5 +12,5 @@ local enemy = ...
 local Beam = require "scripts/enemies/beam"
 
 Beam.initialize(enemy, {
-  length = 40
+  length = 50
 });

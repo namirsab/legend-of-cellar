@@ -12,3 +12,10 @@ animation{
     { x = 32, y = 0, frame_width = 16, frame_height = 16, origin_x = 8, origin_y = 8 },
   },
 }
+animation{
+  name = "mid_gem",
+  src_image = "entities/bomb.png",
+  directions = {
+    { x = 48, y = 16, frame_width = 16, frame_height = 16, origin_x = 8, origin_y = 8 },
+  },
+}

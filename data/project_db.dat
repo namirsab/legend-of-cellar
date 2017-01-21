@@ -19,11 +19,13 @@ sprite{ id = "dialogs/dialog_robyne", description = "Robyne Dialog" }
 sprite{ id = "enemies/beam_bass", description = "Beam" }
 sprite{ id = "enemies/beam_mid", description = "Beam 2" }
 sprite{ id = "enemies/beamer_bass", description = "beamer" }
+sprite{ id = "enemies/beamer_mid", description = "Beamer Mid" }
 sprite{ id = "enemies/chamaleon", description = "chamaleon" }
 sprite{ id = "enemies/fireball", description = "Fireball" }
 sprite{ id = "enemies/metal_mantis", description = "Metal Mantis" }
 sprite{ id = "enemies/slime_green", description = "Green Slime" }
 sprite{ id = "entities/arrow", description = "Arrow" }
+sprite{ id = "entities/beam_bass", description = "Beam bass" }
 sprite{ id = "entities/beam_mid", description = "Bass gem" }
 sprite{ id = "entities/big_chest", description = "Big chest" }
 sprite{ id = "entities/block", description = "Block" }
@@ -195,15 +197,18 @@ sound{ id = "wrong2", description = "wrong2" }
 sound{ id = "wrong3", description = "wrong3" }
 
 item{ id = "bass_gem", description = "Bass Gem" }
+item{ id = "mid_gem", description = "Mid gem" }
 
 enemy{ id = "beam_bass", description = "Beam" }
 enemy{ id = "beam_mid", description = "Beam 2" }
 enemy{ id = "beamer_bass", description = "Beamer Bass" }
+enemy{ id = "beamer_mid", description = "Beamer Mid" }
 enemy{ id = "chamaleon", description = "Chamaleon" }
 enemy{ id = "fireball", description = "Fireball" }
 enemy{ id = "slime_green", description = "Green Slime" }
 
-entity{ id = "beam", description = "Beam" }
+entity{ id = "beam_bass", description = "Beam bass" }
+entity{ id = "beam_mid", description = "Beam" }
 
 language{ id = "en", description = "English" }
 

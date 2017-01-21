@@ -1,21 +1,119 @@
 properties{
   x = 0,
   y = 0,
-  width = 240,
-  height = 240,
+  width = 300,
+  height = 300,
   min_layer = 0,
   max_layer = 2,
   tileset = "castle",
-  music = "cave",
+}
+
+tile{
+  layer = 0,
+  x = 0,
+  y = 208,
+  width = 8,
+  height = 32,
+  pattern = "10",
+}
+
+tile{
+  layer = 0,
+  x = 0,
+  y = 176,
+  width = 8,
+  height = 32,
+  pattern = "9",
+}
+
+tile{
+  layer = 0,
+  x = 0,
+  y = 32,
+  width = 8,
+  height = 32,
+  pattern = "10",
 }
 
 tile{
   layer = 0,
   x = 0,
   y = 0,
-  width = 240,
-  height = 240,
+  width = 8,
+  height = 32,
+  pattern = "9",
+}
+
+tile{
+  layer = 0,
+  x = 0,
+  y = 40,
+  width = 8,
+  height = 160,
+  pattern = "10",
+}
+
+tile{
+  layer = 0,
+  x = 0,
+  y = 0,
+  width = 448,
+  height = 304,
   pattern = "3",
+}
+
+tile{
+  layer = 0,
+  x = 0,
+  y = 272,
+  width = 8,
+  height = 32,
+  pattern = "13",
+}
+
+tile{
+  layer = 0,
+  x = 32,
+  y = 272,
+  width = 8,
+  height = 32,
+  pattern = "16",
+}
+
+tile{
+  layer = 0,
+  x = 24,
+  y = 272,
+  width = 8,
+  height = 32,
+  pattern = "15",
+}
+
+tile{
+  layer = 0,
+  x = 16,
+  y = 272,
+  width = 8,
+  height = 32,
+  pattern = "14",
+}
+
+tile{
+  layer = 0,
+  x = 40,
+  y = 272,
+  width = 424,
+  height = 32,
+  pattern = "15",
+}
+
+tile{
+  layer = 0,
+  x = 8,
+  y = 272,
+  width = 8,
+  height = 32,
+  pattern = "14",
 }
 
 destination{
@@ -32,18 +130,25 @@ pickable{
   treasure_name = "bass_gem",
 }
 
-enemy{
+pickable{
   layer = 0,
-  x = 48,
-  y = 69,
-  direction = 0,
-  breed = "beamer_bass",
+  x = 208,
+  y = 197,
+  treasure_name = "mid_gem",
 }
 
 enemy{
   layer = 0,
-  x = 152,
-  y = 37,
+  x = 184,
+  y = 69,
+  direction = 0,
+  breed = "beamer_mid",
+}
+
+enemy{
+  layer = 0,
+  x = 64,
+  y = 101,
   direction = 0,
   breed = "beamer_bass",
 }

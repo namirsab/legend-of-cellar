@@ -8,6 +8,12 @@ local function initialize_new_savegame(game)
   game:set_life(game:get_max_life())
   game:set_ability("sword", 1)
   game:set_ability("run", 1)
+
+  function game:on_command_pressed(command)
+    if (command == "item_1") then
+      print("item1")
+    end
+  end
 end
 
 -- Starts the game from savegame save1.dat,

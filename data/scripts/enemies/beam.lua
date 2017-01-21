@@ -17,6 +17,11 @@ function Beam.initialize(enemy, props)
     enemy:set_layer_independent_collisions(true)
     enemy:set_traversable(true)
   end
+
+  function enemy:on_obstacle_reached(enemyMovement)
+    print("Obstacle reached")
+    enemy:remove()
+  end
   
   -- Event called when the enemy should start or restart its movements.
   -- This is called for example after the enemy is created or after

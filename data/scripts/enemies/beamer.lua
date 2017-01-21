@@ -1,10 +1,7 @@
 local Beamer = {}
 
-Beamer.WAVE_BASS = "bass"
-Beamer.WAVE_MID = "mid"
-Beamer.WAVE_HIGH = "high"
-
 function Beamer.initialize(enemy, props)
+  print(props.wave_type)
   local game = enemy:get_game()
   local map = enemy:get_map()
   local hero = map:get_hero()
@@ -27,13 +24,13 @@ function Beamer.initialize(enemy, props)
   -- it was hurt or immobilized.
   function enemy:on_restarted()
     enemy:set_can_attack(true)
-    movement = sol.movement.create("target")
-    movement:set_target(hero)
-    movement:set_speed(48)
+    movement = sol.movement.create("random")
+    --movement:set_target(hero)
+    movement:set_speed(props.speed)
     movement:start(enemy)
     
     sol.timer.start(enemy, props.shot_frequency, function()
-      return attack(enemy, hero)
+      return attack(enemy, hero, props)
     end)
     
     
@@ -44,33 +41,35 @@ function Beamer.initialize(enemy, props)
     end
   end
   
-  function attack(the_enemy, the_hero)
+  function attack(the_enemy, the_hero, props)
     local distance_to_hero = the_enemy:get_distance(the_hero)
     if distance_to_hero < props.shot_distance then
       the_enemy:get_movement():set_speed(0)
       local enemy_direction = the_enemy:get_direction4_to(hero)
-      print("Attack!!")
       local x, y = the_enemy:get_position()
       local damage = the_enemy:get_damage()
-      local beam = create_beam(the_enemy, enemy_direction)
+      local beam = create_beam(the_enemy, enemy_direction, props)
     else
-      the_enemy:get_movement():set_speed(48)
+      the_enemy:get_movement():set_speed(props.speed)
     end
     return true -- repeat the timer
   end
   
-  function create_beam(the_enemy, direction)
+  function create_beam(the_enemy, direction, props)
+    local beam_breed = "beam_" .. props.wave_type
     local beam = the_enemy:create_enemy({
       name = "beam",
       layer = 1,
       x = 0,
       y = 0,
-      breed = "beam_" .. props.wave_type,
+      breed = beam_breed,
       ["direction"] = direction,
     })
       
     return beam;
   end
+
+  
 
   return enemy
 end

@@ -16,10 +16,10 @@ local Beamer = require "scripts/enemies/beamer"
 local BeamTypes = require "scripts/constants/beam_types"
 
 local props = {
-  wave_type = BeamTypes.BASS,
+  wave_type = BeamTypes.MID,
   shot_distance = 50,
-  shot_frequency = 300,
-  speed = 60
+  shot_frequency = 150,
+  speed = 30
 }
 
 Beamer.initialize(enemy, props)

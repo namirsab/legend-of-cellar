@@ -18,19 +18,18 @@ function item:on_started()
   -- Initialize the properties of your item here,
   -- like whether it can be saved, whether it has an amount
   -- and whether it can be assigned.
-  item:set_savegame_variable("bass_gem")
+  item:set_savegame_variable("mid_gem")
   item:set_assignable(true)
 end
 
 function item:on_obtained()
-   game:set_item_assigned(1, item)
+   game:set_item_assigned(2, item)
 end
 
 -- Event called when the hero is using this item.
 function item:on_using()
   local map = item:get_map()
   local hero = map:get_hero()
-  print("Using super gem  " .. hero:get_direction())
   local hero_x, hero_y = hero:get_position()
   local beam = map:create_custom_entity({
     direction = hero:get_direction(),
@@ -39,7 +38,7 @@ function item:on_using()
     width = 16,
     height = 16,
     layer = 2,
-    model = "beam_bass"
+    model = "beam_mid"
   })
   
   beam:shoot()

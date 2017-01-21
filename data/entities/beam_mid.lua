@@ -10,5 +10,8 @@
 
 local entity = ...
 local Beam = require "scripts/custom_entities/beam"
+local BeamTypes = require "scripts/constants/beam_types"
 
-Beam.initialize(entity)
+Beam.initialize(entity, {
+  type = BeamTypes.MID
+})
